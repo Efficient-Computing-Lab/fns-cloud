@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Diabetes type 2 risk assessment menu</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="./js/main.js"></script>
+
+</head>
+<body>
+<div id="colorlib-page">
+    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+    <aside id="colorlib-aside" role="complementary" class="js-fullheight">
+        <nav id="colorlib-main-menu" role="navigation">
+            <ul>
+                <li ><a href="/">Home</a></li>
+                <li class="colorlib-active">Risk assessment</li>
+                <li><a href="/personalized-rec">Personalized Tools</a></li>
+                <li><a href="#">Specialists</a></li>
+                <li><a href="/account-info">My Account</a></li>
+	    <li><%- status_msg %></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div id="colorlib-main">
+        <section class="ftco-section pt-4 mb-5 ftco-intro">
+            <div class="container-fluid px-3 px-md-0">
+                <h3>Meal Plans quick inserts</h3>
+                <hr>
+                <b>Please enter the information mentioned below.</b>
+                <form class="form-block" id="form" action="/helper-energy" method="POST">
+
+                    <label for="percent">Percent:</label>
+                    <input type="text" id="percent" name="percent" value=""><br><br>
+
+                    <label for="ener_def">Energy Def:</label>
+                    <input type="number" id="ener_def" name="ener_def" value=""><br><br>
+
+                    <label for="ener_exp">Energy Exp:</label>
+                    <input type="number" id="ener_exp" name="ener_exp" value=""><br><br>
+
+
+                    <label for="ener_in">Energy In:</label>
+                    <input type="number" id="ener_in" name="ener_in" value=""><br><br>
+
+                    <input type="submit" name="insert" id="insert" value="Insert"/>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+</section>
+
+</body>
+</html>

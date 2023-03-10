@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Diabetes type 2 risk assessment menu</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="./js/main.js"></script>
+
+</head>
+<body>
+<div id="colorlib-page">
+    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+    <aside id="colorlib-aside" role="complementary" class="js-fullheight">
+        <nav id="colorlib-main-menu" role="navigation">
+            <ul>
+                <li ><a href="/">Home</a></li>
+                <li class="colorlib-active">Risk assessment</li>
+                <li><a href="/personalized-rec">Personalized Tools</a></li>
+                <li><a href="#">Specialists</a></li>
+                <li><a href="/account-info">My Account</a></li>
+	    <li><%- status_msg %></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div id="colorlib-main">
+        <section class="ftco-section pt-4 mb-5 ftco-intro">
+            <div class="container-fluid px-3 px-md-0">
+                <h3>Meal Plans quick inserts</h3>
+                <hr>
+                <b>Please enter the information mentioned below.</b>
+                <form class="form-block" id="form" action="/helper" method="POST">
+
+                    <label for="calories">Calories:</label>
+                    <input type="number" id="calories" name="calories" value=""><br><br>
+
+                    <label for="type">Type:</label>
+                    <input type="text" id="type" name="type" value=""><br><br>
+
+                    <label for="option">Option:</label>
+                    <input type="number" id="option" name="option" value=""><br><br>
+
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value=""><br><br>
+
+
+                    <label for="ingredients">Ingredients:</label>
+                    <input type="text" id="ingredients" name="ingredients" value=""><br><br>
+
+
+                    <label for="preparation">Preparation:</label>
+                    <input type="text" id="preparation" name="preparation" value=""><br><br>
+
+
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" name="category" value=""><br><br>
+
+
+                    <label for="cho">CHO:</label>
+                    <input type="number" step="0.01" id="cho" name="cho" value=""><br><br>
+
+
+                    <label for="protein">Protein:</label>
+                    <input type="number"  step="0.01" id="protein" name="protein" value=""><br><br>
+
+
+                    <label for="fat">Fat:</label>
+                    <input type="number"  step="0.01" id="fat" name="fat" value=""><br><br>
+
+
+                    <label for="energy">Energy:</label>
+                    <input type="number"  step="0.01" id="energy" name="energy" value=""><br><br>
+                    <label for="img">Image:</label>
+                    <input type="text" id="img" name="img" value=""><br><br>
+
+
+                    <input type="submit" name="insert" id="insert" value="Insert"/>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+</section>
+
+</body>
+</html>

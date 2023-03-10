@@ -1,0 +1,32 @@
+<%- include('header', { currentPage: 'personalized' }); -%>
+    <div id="colorlib-main">
+        <section class="ftco-section pt-4 mb-5 ftco-intro">
+            <div class="container-fluid px-3 px-md-0">
+                <b>Step 4 : Personalization</b>
+                <form action="/result-rec" method="POST">
+                    <div class="alert alert-info">
+                        <strong>Info!</strong><br>
+                        Based on your target weight and weight loss rate, it is estimated that you will achieve your goal in <strong><%- months %></strong> months.
+                </div><br>
+                    <div class="alert alert-info">
+                        <strong>Message:</strong><br>
+                        In order to achieve your weight loss goal, it is recommended to increase your physical activity levels and decrease your daily energy intake.
+                        <br>
+                        You could equally share your effort by increasing your energy expenditure by (Required energy deficit * 50%) kcal and decreasing your daily energy intake by (Required energy deficit * 50%) kcal.
+                        <br>
+                        Please remember the importance of combining diet and exercise to achieve long lasting weight changes and weight loss maintenance, as well as significant health benefits.
+
+                    </div> <br>
+
+                    <div class="slidecontainer">
+                        <p>If you wish to share your effort between exercise and diet in a different proportion, please use the following bar</p>
+                        Exercise <input type="range" min="1" max="100" value="50" class="slider" id="myRange" name="percentage"> Diet
+                    </div>
+                    <br><br>
+                    <input type="submit" id="submitData" name="sumbit-data" value="Get recommendations">
+                </form>
+            </div>
+        </section>
+    </div>
+<%- include('footer'); -%>
+

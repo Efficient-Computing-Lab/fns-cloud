@@ -1,0 +1,2 @@
+all:
+	node myapp.js

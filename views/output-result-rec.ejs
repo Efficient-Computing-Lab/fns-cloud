@@ -1,0 +1,75 @@
+<%- include('header', { currentPage: 'personalized' }); -%>
+    <div id="colorlib-main">
+        <section class="ftco-section pt-4 mb-5 ftco-intro">
+           <div class="container-fluid px-3 px-md-0">
+            <h3>Meal Plan</h3>
+            <hr>
+            <h4>Breakfast:</h4>
+            <table class="table table-bordered">
+
+            <img class="icon" src="food_icons/<%= breakfast.image %>"><h3 class="icon_text"><%= breakfast.name %></h3>
+            <tr><th>ingredients</th><td><%= breakfast.ingredients %></td></tr>
+            <tr><th>preparation</th><td><%= breakfast.preparation %></td></tr>
+            <tr><th>category</th><td><%= breakfast.category %></td></tr>
+            <tr><th>carbohydrates (g)</th><td><%= breakfast.cho %></td></tr>
+            <tr><th>protein (g)</th><td><%= breakfast.protein %></td></tr>
+            <tr><th>fat (g)</th><td><%= breakfast.fat %></td></tr>
+            <tr><th>energy (kcal)</th><td><%= breakfast.energy %></td></tr>
+           </table><br>
+            <h4>Lunch:</h4>
+            <table class="table table-bordered">
+            
+            <img class="icon" src="food_icons/<%= lunch.image %>"><h3 class="icon_text"><%= lunch.name %></h3>
+
+            <tr><th>calories per day</th><td><%= lunch.calories %></td></tr>
+            <tr><th>type</th><td><%= lunch.type %></td></tr>
+            <tr><th>name</th><td><%= lunch.name %></td></tr>
+            <tr><th>ingredients</th><td><%= lunch.ingredients %></td></tr>
+            <tr><th>preparation</th><td><%= lunch.preparation %></td></tr>
+            <tr><th>category</th><td><%= lunch.category %></td></tr>
+            <tr><th>carbohydrates (g)</th><td><%= lunch.cho %></td></tr>
+            <tr><th>protein (g)</th><td><%= lunch.protein %></td></tr>
+            <tr><th>fat (g)</th><td><%= lunch.fat %></td></tr>
+            <tr><th>energy (kcal)</th><td><%= lunch.energy %></td></tr>
+            </table><br>
+            <h4>Dinner:</h4>
+            <table class="table table-bordered">
+            <img class="icon" src="food_icons/<%= dinner.image %>"><h3 class="icon_text"><%= dinner.name %></h3>
+
+            <tr><th>calories per day</th><td><%= dinner.calories %></td></tr>
+            <tr><th>type</th><td><%= dinner.type %></td></tr>
+            <tr><th>name</th><td><%= dinner.name %></td></tr>
+            <tr><th>ingredients</th><td><%= dinner.ingredients %></td></tr>
+            <tr><th>preparation</th><td><%= dinner.preparation %></td></tr>
+            <tr><th>category</th><td><%= dinner.category %></td></tr>
+            <tr><th>carbohydrates (g)</th><td><%= dinner.cho %></td></tr>
+            <tr><th>protein (g)</th><td><%= dinner.protein %></td></tr>
+            <tr><th>fat (g)</th><td><%= dinner.fat %></td></tr>
+            <tr><th>energy (kcal)</th><td><%= dinner.energy %></td></tr>
+            </table><br>
+            <h4>Morning/Afternoon snack:</h4>
+
+            <table class="table table-bordered">
+            <img class="icon" src="food_icons/<%= tea.image %>"><h3 class="icon_text"><%= tea.name %></h3>
+
+            <tr><th>calories per day</th><td><%= tea.calories %></td></tr>
+            <tr><th>type</th><td><%= tea.type %></td></tr>
+            <tr><th>name</th><td><%= tea.name %></td></tr>
+            <tr><th>ingredients</th><td><%= tea.ingredients %></td></tr>
+            <tr><th>category</th><td><%= tea.category %></td></tr>
+            <tr><th>carbohydrates (g)</th><td><%= tea.cho %></td></tr>
+            <tr><th>protein (g)</th><td><%= tea.protein %></td></tr>
+            <tr><th>fat (g)</th><td><%= tea.fat %></td></tr>
+            <tr><th>energy (kcal)</th><td><%= tea.energy %></td></tr>
+            </table><br>
+            <br>
+            <h3>Physical Activity</h3>
+            <hr>
+            <div class="alert alert-info">
+                        <strong>Physical Activity:</strong><br>
+                        The additional time you need to devote on the activity chosen (<%- activity %>) <strong>per week</strong> is <%- activity_mins %> minutes.
+                    </div>
+            </div>
+        </section>
+    </div>
+<%- include('footer'); -%>

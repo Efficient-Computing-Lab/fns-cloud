@@ -1,0 +1,29 @@
+<html lang="en">
+<!doctype html>
+<head>
+    <title>Diabetes type 2 risk assessment menu</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/new.css">
+    <link rel="stylesheet" href="css/chatBot.css">
+
+</head>
+<body>
+        <nav id="main-menu" role="navigation">
+            <img src="https://www.pikpng.com/pngl/b/47-473793_avocados-from-mexico-is-the-gold-level-sponsor.png" class="center">
+            <ul>
+                <li <%if (currentPage == 'home') { %>class="active"<% } %>><a href="/">Home</a></li>
+                <li <%if (currentPage == 'risk') { %>class="active"<% } %>><a href="/risk">Risk assessment</a></li>
+                <li <%if (currentPage == 'personalized') { %>class="active"<% } %>><a href="/personalized-rec">Personalized Tools</a>
+                </li>
+                <li <%if (currentPage == 'account') { %>class="active"<% } %>><a href="/account-info">My Account</a></li>
+                <li><%- status_msg %></li>
+                <li><%- logout %></li>
+            </ul>
+        </nav>
+    <main>

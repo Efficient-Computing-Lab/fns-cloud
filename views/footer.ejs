@@ -1,0 +1,24 @@
+</main>
+<div class="chatBot">
+    <div class="chatBotHeading">
+        <label for="chatTextBox" id="chatOpenTrigger" class="">Can I help you?</label>
+    </div>
+    <hr class="">
+    <div class="chatBody">
+        <div class="chatSession">
+        </div>
+    </div>
+    <form class="chatForm" autocomplete="off">
+        <div class="typingArea">
+            <textarea name="chatInput" id="chatTextBox" class="textArea" onblur="if(!validateMessage()) this.value = 'Type here...'" onfocus="if(!validateMessage()) this.value = ''"></textarea>
+            <button type="submit" class="sendButton" id="sendButton"><p>Send</p></button>
+        </div>
+        <button type="button" id="chatCloseTrigger">Close Chat!</button>
+    </form>
+</div>
+<script src="./js/chatBotConversation.js"></script>
+<script src="./js/chatBotValidate.js"></script>
+<script src="./js/chatBotAnimate.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+version: "3"
+services:
+  login-app:
+    container_name: node-web-app
+    image: thesis/node-web-app
+    restart: always
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo:4.4.14-rc0-focal
+    volumes:
+      - db-data:/data/db
+      - ./mongo_init:/docker-entrypoint-initdb.d
+      - ./mongo_exports/:/mongo_exports
+    environment:
+      MONGO_INITDB_DATABASE: diabetes_web
+    restart: "on-failure"
+volumes:
+  db-data:

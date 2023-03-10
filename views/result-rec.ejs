@@ -1,0 +1,32 @@
+<%- include('header', { currentPage: 'personalized' }); -%>
+    <div id="colorlib-main">
+        <section class="ftco-section pt-4 mb-5 ftco-intro">
+            <div class="container-fluid px-3 px-md-0">
+                <b>Step 4.1 : Personalisation: Allerges/Intolerances</b>
+                <form action="/meal-plans" method="POST">
+                
+                    <!-- SEX -->
+                    <label>Do you suffer from any allergies or food intolerances?</label>
+                    <input type="radio" id="yes" name="answer" value="Yes" onchange="displayQuestions(this.value)">
+                    Yes
+                    <input type="radio" id="no" name="answer" value="No" onchange="displayQuestions(this.value)">
+                    No
+                    <br><br>
+                    <div id="yesQuestion" style="display:none;">
+                        <label for="selectAllergy">Please indicate what type of allergies or food intolerances you suffer from:</label>
+                        <select name="allergies" id="selectAllergy" multiple>
+                            <option value="gluten">Celiac disease/Gluten intolerance</option>
+                            <option value="lactose">Lactose intolerance</option>
+                            <option value="nut">Nuts allergy</option>
+                            <option value="lupin">Lupin allergy</option>
+                        </select>
+                        <br><br><br>
+                    </div>
+
+                    <input type="submit" name="get-reccomendaitons" value="Get Recommendations" id="getData">
+
+                </form>
+            </div>
+        </section>
+    </div>
+<%- include('footer'); -%>

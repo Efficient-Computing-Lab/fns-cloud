@@ -1,0 +1,40 @@
+<%- include('header', { currentPage: 'account'}); -%>
+
+  <div id="colorlib-main">
+        <section class="ftco-section pt-4 mb-5 ftco-intro">
+            <div class="container-fluid px-3 px-md-0">
+
+                <form action='/batch-mode' enctype="multipart/form-data"  method="POST">
+                    <div class="alert alert-info">
+                      <p>Please, upload your .csv file.</p>
+                      <strong>Warning! </strong>CSV needs to contain the following columns:
+                        <ul>
+                          <li>name
+                          <li>sex
+                          <li>birthDate
+                          <li>height
+                          <li>weight
+                          <li>waist
+                          <li>screen
+                          <li>breakfasts
+                          <li>sugary
+                          <li>alcohol
+                          <li>walking
+                          <li>physical
+                          <li>legumes
+                        </ul>
+                        <p>Alternatively, you can fill in <a href="template.csv">this template.</a></p>
+                    </div><br>
+                    <label for="myfile">Select a file:</label>
+                    <input type="file" id="myFile" name="myFile"><br><%-error_msg%><br>
+
+                    <input type="submit" id="submitData" name="sumbit-data" value="Get Download">
+                    <br><br>
+                    <%-download%>
+                </form>
+
+
+            </div>
+        </section>
+    </div>
+<%- include('footer'); -%>

@@ -1,0 +1,58 @@
+{
+  "experts":[
+          {
+            "region": "Pangrati" ,
+            "name": "Georgakakis I. Charalambos",
+            "address": "Rizari 26",
+            "phone_number": "2107255644"
+          },
+          {
+            "region": "Pangrati" ,
+            "name": "Isorropia - Karousou Aikaterini",
+            "address": "Arrivou 5",
+            "phone_number": "2110127655" 
+          },
+          {
+            "region": "Pangrati" ,
+            "name": "Mednutrition",
+            "address": "Chremonidou 19-21",
+            "phone_number": "2107019040"
+          },
+          {
+            "region": "Nea Smirni" ,
+            "name": "Med Nutrition - Isari Georgia",
+            "address": "Artakis 147",
+            "phone_number": "2109329411"
+          },
+          {
+            "region": "Nea Smirni" ,
+            "name": "Prapa Adamantia",
+            "address": "Agias Foteinis 37",
+            "phone_number": "2114141344" 
+          },
+          {
+            "region": "Nea Smirni" ,
+            "name": "Karaiskos Ioannis",
+            "address": "25is Martioy 4",
+            "phone_number": "2109318955" 
+          },
+          {
+            "region": "Ampelokipoi" ,
+            "name": "Chatzimichail Panagiotis",
+            "address": "Aretaioy 22 & Panormoy",
+            "phone_number": "2130345426"
+          },
+          {
+            "region": "Ampelokipoi" ,
+            "name": "Kokkinoy Liana",
+            "address": "Amaliados 4-6",
+            "phone_number": "2106449377" 
+          },
+          {
+            "region": "Ampelokipoi" ,
+            "name": "Christopoulou Georgia",
+            "address": "Leoforos Kifisias 125-127",
+            "phone_number": "2114077739" 
+          }
+  ]
+}

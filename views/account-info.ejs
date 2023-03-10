@@ -1,0 +1,55 @@
+<%- include('header', { currentPage: 'account' }); -%>
+    <div id="colorlib-main">
+        <section class="ftco-section pt-4 mb-5 ftco-intro">
+            <div class="container-fluid px-3 px-md-0">
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <h1 class="h2">My Account</h1>
+                        <hr>
+                        <p>Total collected data displayed below</p>
+                    </div>
+                    <div class="col-md-12">
+                        <h2 class="h4">Info: <%- username %></h2>
+                        <hr>
+                        <%-info %>
+                        
+                        <br>
+                        
+                        <a href="/account-info/delete-data"><input type="submit" value="Delete All Data"></input></a>
+                        <a href="/account-info/delete-user"><input type="submit" value="Delete Account"></input></a>
+                        <a href="/batch-mode"><input type="submit" value="Enter batch mode"></input></a>
+                        
+                        <h2>Past measurements</h2>
+                        <%-history%>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</section>
+<div class="chatBot">
+    <div class="chatBotHeading">
+        <label for="chatTextBox" id="chatOpenTrigger" class="">Need a specialist? Ask Me!</label>
+    </div>
+    <hr class="">
+    <div class="chatBody">
+        <div class="chatSession">
+        </div>
+    </div>
+    <form class="chatForm" autocomplete="off">
+        <div class="typingArea">
+            <textarea name="chatInput" id="chatTextBox" class="textArea" onblur="if(!validateMessage()) this.value = 'Type here...'" onfocus="if(!validateMessage()) this.value = ''"></textarea>
+            <button type="submit" class="sendButton" id="sendButton"><img src="./Gfx/send.svg" alt="Send" srcset=""></button>
+        </div>
+        <button type="button" id="chatCloseTrigger">Close Chat!</button>
+    </form>
+</div>
+<script src="./js/chatBotConversation.js"></script>
+<script src="./js/chatBotValidate.js"></script>
+<script src="./js/chatBotAnimate.js"></script>
+<script src="./js/main.js"></script>
+<%- include('footer'); -%>
+

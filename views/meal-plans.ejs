@@ -1,0 +1,98 @@
+<%- include('header', { currentPage: 'personalized' }); -%>
+         <div id="colorlib-main">
+            <section class="ftco-section pt-4 mb-5 ftco-intro">
+               <div class="container-fluid px-3 px-md-0">
+                  <form action="/output-result-rec" method="POST">
+                    <h3>Customize your meal plan</h3><br>
+                     <table>
+                        <tr>
+                           <th>
+                              <label for="breakfasts">Select breakfast:</label>
+                           </th>
+                           <td>
+                              <select name="breakfasts" id="breakfasts">
+                                 <% for(var i=0; i < breakfasts.length; i++) { %>
+                                 <option value="<%= breakfasts[i].id %>"><%= breakfasts[i].name %></option>
+                                 <% } %>
+                              </select>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              <label for="lunches">Select lunch:</label>
+                           </th>
+                           <td>
+                              <select name="lunches" id="lunches">
+                                 <% for(var i=0; i < lunches.length; i++) { %>
+                                 <option value="<%= lunches[i].id %>"><%= lunches[i].name %></option>
+                                 <% } %> 
+                              </select>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              <label for="dinners">Select dinner:</label>
+                           </th>
+                           <td>
+                              <select name="dinners" id="dinners">
+                                 <% for(var i=0; i < dinners.length; i++) { %>
+                                 <option value="<%= dinners[i].id %>"><%= dinners[i].name %></option>
+                                 <% } %>
+                              </select>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th>
+                              <label for="teas">Select morning and afternoon snack:</label>
+                           </th>
+                           <td>
+                              <select name="teas" id="teas">
+                                 <% for(var i=0; i < teas.length; i++) { %>
+                                 <option value="<%= teas[i].id %>"><%= teas[i].name %></option>
+                                 <% } %>
+                              </select>
+                           </td>
+                        </tr>
+                     </table><br>
+                    <h3>Customize your physical activity</h3><br>
+                    <label for="recAct">Choose one of the activities listed:</label>
+                    <select name="leisure-activity" id="recAct">
+                        <option value="aerobic">Aerobic dancing</option>
+                        <option value="archery">Archery</option>
+                        <option value="ballet">Ballet or modern dancing</option>
+                        <option value="basketball">Basketball training</option>
+                        <option value="bicycleLight">Bicycling, <16 hm/h (light effort)</option>
+                        <option value="bicycleMod">Bicycling 16.0-22.0 km/h (moderate effort)</option>
+                        <option value="billiards">Billiards</option>
+                        <option value="bowling">Bowling</option>
+                        <option value="canoeLight">Canoeing, rowing 3.0-6.0 km/h (light effort)</option>
+                        <option value="canoeMod">Canoeing, rowing 6.5-9.5 km/h (moderate effort)</option>
+                        <option value="cricket">Cricket</option>
+                        <option value="darts">Darts</option>
+                        <option value="frisbee">Frisbee</option>
+                        <option value="golf">Golf</option>
+                        <option value="horse">Horseback riding</option>
+                        <option value="jogMod">Jogging, 7-9 km/h</option>
+                        <option value="kayak">Kayaking</option>
+                        <option value="netball">Netball, training</option>
+                        <option value="sBallOff">Softball or baseball, officiating</option>
+                        <option value="sBallPitch">Softball or baseball, pitching</option>
+                        <option value="skiiLight">Skiing, slow or light effort</option>
+                        <option value="soccer">Soccer, training</option>
+                        <option value="surf">Surfing</option>
+                        <option value="swimLight">Swimming, freestyle (light-moderate effort)</option>
+                        <option value="tennis">Tennis</option>
+                        <option value="volley">Volleyball, training</option>
+                        <option value="walkLight">Walking 4.8-5.6k m/h (light effort)</option>
+                        <option value="walkingDog">Walking the dog</option>
+                        <option value="weighLight">Weigh lifting (light-moderate effort)</option>
+                        <option value="weighVig">Weigh lifting (vigorous effort)</option>
+                        <option value="yoga">Yoga, stretching</option>
+                    </select><br><br>
+                    <input type="submit" name="results" value="Results">
+                  </form>
+               </div>
+            </section>
+         </div>
+<%- include('footer'); -%>
+

@@ -1,0 +1,64 @@
+<%- include('header', { currentPage: 'risk' }); -%>
+    <div id="colorlib-main">
+        <section class="ftco-section pt-4 mb-5 ftco-intro">
+            <div class="container-fluid px-3 px-md-0">
+                <h3>Type 2 Diabetes (T2D) and Hypertension (HTN) risk estimator</h3>
+                <hr>
+                <b>Please enter the information mentioned below.</b>
+                <form class="form-block" id="risk-form" action="/risk-result" method="POST">
+                    <!-- SEX -->
+                    <label>Sex:&ensp; </label>
+                    <input type="radio" id="male" name="sex" value="male" required>
+                    Male
+                    <input type="radio" id="female" name="sex" value="female" required >
+                    Female
+                    <br><br>
+                    <label for="birth">Date of birth:</label>
+                    <input type="date" id="birth" name="birthdate" value="" required><br><br>
+
+                    <label for="height">Height (in cm):</label>
+                    <input type="number" id="height" name="height" value="" required><br><br>
+
+                    <label for="weight">Weight (in kgs):</label>
+                    <input type="number" id="weight" name="weight" min=40 max=200 value="" required><br><br>
+                    <!-- WAIST CIRCUMFERENCE -->
+                    <label for="waist">Waist Circumference (in cm):</label>
+                    <input type="number" id="waist" name="waist" min=0 max=200 value="" required><br><br>
+                    <!-- LEISURE SCREEN TIME -->
+                    <label for="screen">Leisure screen time (hours per day):</label>
+                    <input type="number" id="screen" name="screen" min=0 max=24 value="" required><br><br>
+                    <!-- BREAKFAST -->
+                    <label for="breakfast">Number of breakfasts per week:</label>
+                    <input type="number" id="breakfast" name="breakfasts" min=0 max=7 value="" required><br><br>
+                    <!-- SUGARY PORTIONS -->
+                    <label for="sugary">Sugary drinks per week: (1 portion = 250ml)</label>
+                    <input type="number" id="sugary" name="sugary" min=0 max=50 value="" required></br
+                    <br><br>
+                    <!-- ALCOHOL CONSUMPTION -->
+                    <label for="alcohol">Alcohol consumption per week: (1 portion = 125 mL of wine, 330 mL
+                        of beer or 40mL of hard liquor)</label>
+                    <input type="number" id="alcohol" name="alcohol" min=0 max=50 value="" required></br>
+                    <br><br>
+                    <!-- WALKING -->
+                    <p>Walking 3 times per week (around 30min each):</p>
+                    <input type="radio" id="walkTrue" name="walking" value="1" required>
+                    <label for="walkTrue">Yes</label><br>
+                    <input type="radio" id="walkFalse" name="walking" value="0" required >
+                    <label for="walkFalse">No</label><br><br>
+                    <!-- WALKING -->
+                    <p>Vigorous physical activity 3 times per week (around 10min each):</p>
+                    <input type="radio" id="physTrue" name="physical" value="1" required>
+                    <label for="physTrue">Yes</label><br>
+                    <input type="radio" id="physFalse" name="physical" value="0" required>
+                    <label for="physFalse">No</label><br><br>
+                    <!-- LEGUMES -->
+                    <label for="legumes">Legumes per week (in cups):</label>
+                    <input type="number" id="legume" name="legumes" min=0 max=50 value="" required><br><br>
+
+                    <input type="submit" name="calculate" id="calc" value="Calculate"/>
+                </form>
+            </div>
+        </section>
+    </div>
+<%- include('footer'); -%>
+

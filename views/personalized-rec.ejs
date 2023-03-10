@@ -1,0 +1,43 @@
+<%- include('header', { currentPage: 'personalized' }); -%>
+    <div id="colorlib-main">
+        <section class="ftco-section pt-4 mb-5 ftco-intro">
+            <div class="container-fluid px-3 px-md-0">
+                <h3>Personalised recommendations</h3>
+                <hr>
+                <%- error_msg %>
+                <b>Step 1 : Please help us first collect some basic information about you.</b>
+                <form action="energy-expenditure" method="POST">
+                    <!-- SEX -->
+                    <label>Sex:&ensp; </label>
+                    <input type="radio" id="male" name="sex" value="male" <%- sex == 'male' ? 'checked' : '' %>> Male
+                    <input type="radio" id="female" name="sex" value="female"> Female<br><br>
+
+                    <label for="ethnicity">Ethnicity:</label>
+                    <select name="ethnicities" id="ethnicity">
+                        <option value="americanIndian">American Indian</option>
+                        <option value="alaskaNative">Alaska Native</option>
+                        <option value="asian">Asian</option>
+                        <option value="black">Black</option>
+                        <option value="africanAmerican">African American</option>
+                        <option value="caucasian">Caucasian</option>
+                        <option value="hispanic">Hispanic</option>
+                        <option value="latino">Latino</option>
+                        <option value="nativeHawaiian">Native Hawaiian </option>
+                        <option value="otherPacificIslander">Other Pacific Islander </option>
+                    </select><br><br>
+
+                    <label for="birth">Date of birth:</label>
+                    <input type="date" id="birth" name="birth" min="1920-01-01" max="2021-01-01" required value="<%- birth %>"><br><br>
+
+                    <label for="height">Height (in cm):<small><%- height_date %></small></label>
+                    <input type="number" id="height" name="user-height" value="<%- height %>" required min="100" required max="300"><br><br>
+
+                    <label for="weight">Weight (in kgs):<small><%- weight_date %></small></label>
+                    <input type="number" id="weight" name="user-weight" value="<%- weight %>" required min="40" required max="200"><br><br>
+
+                    <input type="submit" name="submit-data" id="submitBaseData" value="Next"/>
+                </form>
+            </div>
+        </section>
+    </div>
+<%- include('footer'); -%>

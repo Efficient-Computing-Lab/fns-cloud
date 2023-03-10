@@ -1,0 +1,5 @@
+name,sex,birthDate,height,weight,waist,screen,breakfasts,sugary,alcohol,walking,physical,legumes
+John Doe,male,01/01/1990,170,67,100,4,5,14,5,yes,no,5
+Mary Jane,female,02/03/1985,165,65,88,4,3,15,3,no,no,3
+James Park,male,04/10/1995,175,70,110,5,3,14,0,no,no,6
+Sarah Lean,female,05/08/1999,165,55,80,4,6,8,0,yes,no,7

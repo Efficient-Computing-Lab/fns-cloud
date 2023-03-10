@@ -1,0 +1,235 @@
+<%- include('header', { currentPage: 'personalized' }); -%>
+    <div id="colorlib-main">
+        <section class="ftco-section pt-4 mb-5 ftco-intro">
+            <div class="container-fluid px-3 px-md-0">
+                <b>Step 2 : Please fill in some information regarding your physical activities</b>
+                <form action="/weight-loss-goal" method="POST">
+
+                    <label for="weekday">How many hours do you sleep on weekdays?</label>
+                    <input type="number" id="weekday" name="weekday" value="0" min="1" max="23"><br><br>
+                    <label for="weekend">How many hours do you sleep on weekend days?</label>
+                    <input type="number" id="weekend" name="weekend" value="0" min="1" max="23"><br><br>
+
+                    <label for="occupation">Please select one of the following occupations that best describes your current job:</label>
+                    <select name="occupations" id="occupation">
+                        <option value="agricult">Agricultural related, forestry and fishing</option>
+                        <option value="art">Artist, writer, entertainer, athlete</option>
+                        <option value="cleaning">Cleaning and building service occupation</option>
+                        <option value="constrLaborer">Construction laborer</option>
+                        <option value="constrTrade">Construction trade</option>
+                        <option value="cook">Cook</option>
+                        <option value="engineer">Engineer, architect, scientist</option>
+                        <option value="executive">Executive, administrator, manager</option>
+                        <option value="extractive">Extractive and precision production</option>
+                        <option value="fabricator">Fabricator, assembler, inspector, sampler</option>
+                        <option value="farm">Farm and nursery worker</option>
+                        <option value="farmOp">Farm operator, manager, and supervisor</option>
+                        <option value="freight">Freight, stock, and material mover (hand)</option>
+                        <option value="healthDiag">Health diagnosing, assessing and treating</option>
+                        <option value="healthServ">Health service</option>
+                        <option value="information">Information clerk</option>
+                        <option value="laborerNotConstr">Laborer (except construction)</option>
+                        <option value="machine">Machine operator, assorted materials</option>
+                        <option value="management">Management related</option>
+                        <option value="material">Material recording, scheduling, distributing clerk</option>
+                        <option value="miscAdmn">Miscellaneous, administrative support</option>
+                        <option value="miscFood">Miscellaneous food preperation and service</option>
+                        <option value="motor">Motor vehicle operator</option>
+                        <option value="otherHelp">Other helper, cleaner, hand packager, laborer</option>
+                        <option value="otherMech">Other mechanic and repairer</option>
+                        <option value="otherProf">Other professional specialty occupation</option>
+                        <option value="otherTrans">Other transportation and material moving</option>
+                        <option value="personal">Personal service</option>
+                        <option value="private">Private household occupation</option>
+                        <option value="protective">Protective service</option>
+                        <option value="records">Records processing</option>
+                        <option value="sales">Sales worker, retail and personal services</option>
+                        <option value="salesReps">Sales reps., finance, business, and commodities</option>
+                        <option value="secretary">Secretary, stenographer, typist</option>
+                        <option value="supervisor">Supervisor, proprietor, sales</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="technician">Technician and related support</option>
+                        <option value="textile">Textile, apparel, furnishing machine operator</option>
+                        <option value="vehicle">Vehicle and mobile equip, mechanic, repairer</option>
+                        <option value="waitress">Waiter/Waitress</option>
+                    </select>
+                    <br><br>
+
+                    <label for="totalHoursOfWork">How many hours do you devote to your work per week?</label>
+                    <input type="number" id="totalHoursOfWork" name="totalHoursOfWork" value="0"><br><br>
+
+                    <label for="transTrue">Do you walk and/or cycle to work?</label>
+                    <input type="radio" id="transTrue" name="trans" value="Yes" onchange="displayQuestions(this.value)">
+                    Yes
+                    <input type="radio" id="transFalse" name="trans" value="No" onchange="displayQuestions(this.value)" checked>
+                    No
+                    <br><br>
+                    <!-- conditional input -->
+                    <div id="yesQuestion" style="display:none;">
+                        Please select how vigorously you walk and/or cycle to work.
+                        <br><br><label for="walking">Walking:</label>
+                        <select name="walking-effort" id="walking">
+                            <option value="light">4.8 km/h, light effort</option>
+                            <option value="moderate">4.8-5.6 km/h, moderate effort</option>
+                            <option value="vigorous">>5.6 km/h, vigorous effort</option>
+                            <option value="none">None</option>
+                        </select> <br>
+                        <label for="cycling">Cycling:</label>
+                        <select name="cycling-effort" id="cycling">
+                            <option value="light">16 km/h, light effort</option>
+                            <option value="moderate">16.0-22.0 km/h, moderate effort</option>
+                            <option value="vigorous">22.0-30.0 km/h, vigorous effort</option>
+                            <option value="none">None</option>
+                        </select>
+                        <br><br>
+                        <label for="hoursTravel">How much time do you spend in total, travelling to and from your work per week (in minutes)?</label>
+                        <input type="number" id="hoursTravel" name="hoursTravel"  value="0"><br><br>
+                    </div>
+                    <!-- end of conditional input -->
+
+                    <p>Please select the type and total duration of leisure time activities and/or exercise that you do every week (Please include only activities that you do for more than 30 minutes/week):</p>
+                    <label for="firstAct">Activity 1:</label>
+                    <select name="leisure-activity-1" id="firstAct">
+                        <option value="bowling">Bowling</option>
+                        <option value="archery">Archery</option>
+                        <option value="billiards">Billiards</option>
+                        <option value="darts">Darts</option>
+                        <option value="golf">Golf</option>
+                        <option value="frisbee">Frisbee</option>
+                        <option value="yoga">Yoga, stretching</option>
+                        <option value="ballet">Ballet or modern dancing</option>
+                        <option value="bicycleLight">Bicycling, <16 hm/h (light effort)</option>
+                        <option value="canoeLight">Canoeing, rowing 3.0-6.0 km/h (light effort)</option>
+                        <option value="cricket">Cricket</option>
+                        <option value="horse">Horseback riding</option>
+                        <option value="sBallOff">Softball or baseball, officiating</option>
+                        <option value="surf">Surfing</option>
+                        <option value="volley">Volleyball, training</option>
+                        <option value="walkLight">Walking 4.8-5.6k m/h (light effort)</option>
+                        <option value="dog">Walking the dog</option>
+                        <option value="weighLight">Weigh lifting (light-moderate effort)</option>
+                        <option value="aerobic">Aerobic dancing</option>
+                        <option value="basketball">Basketball training</option>
+                        <option value="bicycleMod">Bicycling 16.0-22.0 km/h (moderate effort)</option>
+                        <option value="canoeMod">Canoeing, rowing 6.5-9.5 km/h (moderate effort)</option>
+                        <option value="jogMod">Jogging, 7-9 km/h</option>
+                        <option value="kayak">Kayaking</option>
+                        <option value="netball">Netball, training</option>
+                        <option value="skiiLight">Skiing, slow or light effort</option>
+                        <option value="soccer">Soccer, training</option>
+                        <option value="sBallPitch">Softball or baseball, pitching</option>
+                        <option value="swimLight">Swimming, freestyle (light-moderate effort)</option>
+                        <option value="tennis">Tennis</option>
+                        <option value="weighVig">Weigh lifting (vigorous effort)</option>
+                        <option value="basket">Basketball game, competitive</option>
+                        <option value="beach">Beach volleyball</option>
+                        <option value="boxing">Boxing</option>
+                        <option value="hockey">Hockey</option>
+                        <option value="netball">Netball game,competitive</option>
+                        <option value="runMod">Running, 9-11 km/h</option>
+                        <option value="skiiVig">Skiing (moderate-vigorous effort)</option>
+                        <option value="skipping">Skipping</option>
+                        <option value="volleyComp">Volleyball game, competitive</option>
+                        <option value="bicycleVig">Bicycling >22.0 km/h (vigorous effort)</option>
+                        <option value="canoeVig">Canoeing, rowing >10.0 km/h (vigorous effort)</option>
+                        <option value="rugby">Rugby</option>
+                        <option value="runVig">Running >11.0 km/h</option>
+                        <option value="soccerComp">Soccer game, competitive</option>
+                        <option value="squash">Squash</option>
+                        <option value="swimVig">Swimming, freestyle (vigorous effort)</option>
+                        <option value="polo">Water polo</option>
+                    </select><br>
+                    <label for="firstActMins">Minutes:</label>
+                    <input type="number" id="firstActMins" name="first-act-mins" value="0"><br><br>
+                    <label for="sectAct">Activity 2:</label>
+                    <select name="leisure-activity-2" id="sectAct">
+                        <option value="bowling">Bowling</option>
+                        <option value="archery">Archery</option>
+                        <option value="billiards">Billiards</option>
+                        <option value="darts">Darts</option>
+                        <option value="golf">Golf</option>
+                        <option value="frisbee">Frisbee</option>
+                        <option value="yoga">Yoga, stretching</option>
+                        <option value="ballet">Ballet or modern dancing</option>
+                        <option value="bicycleLight">Bicycling, <16 hm/h (light effort)</option>
+                        <option value="canoeLight">Canoeing, rowing 3.0-6.0 km/h (light effort)</option>
+                        <option value="cricket">Cricket</option>
+                        <option value="horse">Horseback riding</option>
+                        <option value="sBallOff">Softball or baseball, officiating</option>
+                        <option value="surf">Surfing</option>
+                        <option value="volley">Volleyball, training</option>
+                        <option value="walkLight">Walking 4.8-5.6k m/h (light effort)</option>
+                        <option value="dog">Walking the dog</option>
+                        <option value="weighLight">Weigh lifting (light-moderate effort)</option>
+                        <option value="aerobic">Aerobic dancing</option>
+                        <option value="basketball">Basketball training</option>
+                        <option value="bicycleMod">Bicycling 16.0-22.0 km/h (moderate effort)</option>
+                        <option value="canoeMod">Canoeing, rowing 6.5-9.5 km/h (moderate effort)</option>
+                        <option value="jogMod">Jogging, 7-9 km/h</option>
+                        <option value="kayak">Kayaking</option>
+                        <option value="netball">Netball, training</option>
+                        <option value="skiiLight">Skiing, slow or light effort</option>
+                        <option value="soccer">Soccer, training</option>
+                        <option value="sBallPitch">Softball or baseball, pitching</option>
+                        <option value="swimLight">Swimming, freestyle (light-moderate effort)</option>
+                        <option value="tennis">Tennis</option>
+                        <option value="weighVig">Weigh lifting (vigorous effort)</option>
+                        <option value="basket">Basketball game, competitive</option>
+                        <option value="beach">Beach volleyball</option>
+                        <option value="boxing">Boxing</option>
+                        <option value="hockey">Hockey</option>
+                        <option value="netball">Netball game,competitive</option>
+                        <option value="runMod">Running, 9-11 km/h</option>
+                        <option value="skiiVig">Skiing (moderate-vigorous effort)</option>
+                        <option value="skipping">Skipping</option>
+                        <option value="volleyComp">Volleyball game, competitive</option>
+                        <option value="bicycleVig">Bicycling >22.0 km/h (vigorous effort)</option>
+                        <option value="canoeVig">Canoeing, rowing >10.0 km/h (vigorous effort)</option>
+                        <option value="rugby">Rugby</option>
+                        <option value="runVig">Running >11.0 km/h</option>
+                        <option value="soccerComp">Soccer game, competitive</option>
+                        <option value="squash">Squash</option>
+                        <option value="swimVig">Swimming, freestyle (vigorous effort)</option>
+                        <option value="polo">Water polo</option>
+                    </select><br>
+                    <label for="secActMins">Minutes:</label>
+                    <input type="number" id="secActMins" name="second-act-mins" value="0"><br><br>
+
+                    <p>Please select the type and total duration of household activities that you do every week (Please include only activities that you do for more than 30 minutes/week):</p>
+                    <label for="firstHouse">Activity 1:</label>
+                    <select name="house-hold-work-1" id="firstHouse">
+                        <option value="cooking">Cooking</option>
+                        <option value="dusting">Dusting</option>
+                        <option value="ironing">Ironing</option>
+                        <option value="bed">Making bed</option>
+                        <option value="washing">Washing dishes</option>
+                        <option value="watering">Watering plants</option>
+                        <option value="gardening">Gardening (planting, trimming,clearing land)</option>
+                        <option value="mopping">Mopping</option>
+                        <option value="sweep">Sweeping floors/carpets</option>
+                        <option value="vacuum">Vacuuming</option>
+                    </select><br>
+                    <label for="firstHouseMins">Minutes:</label>
+                    <input type="number" id="firstHouseMins" name="first-house-mins" value="0"><br><br>
+                    <label for="secHouse">Activity 2:</label>
+                    <select name="house-hold-work-2" id="secHouse">
+                        <option value="cooking">Cooking</option>
+                        <option value="dusting">Dusting</option>
+                        <option value="ironing">Ironing</option>
+                        <option value="bed">Making bed</option>
+                        <option value="watering">Watering plants</option>
+                        <option value="gardening">Gardening (planting, trimming,clearing land)</option>
+                        <option value="mopping">Mopping</option>
+                        <option value="sweep">Sweeping floors/carpets</option> <option value="vacuum">Vacuuming</option> </select><br>
+                    <label for="secHouseMins">Minutes:</label>
+                    <input type="number" id="secHouseMins" name="sec-house-mins" value="0"><br><br> 
+                    <div id="buttons">
+                    <a href="/personalized-rec" id="previous-anchor">Previous</a>
+                    <input type="submit" id="submitData" name="submit-data" value="Next">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+<%- include('footer'); -%>
+
