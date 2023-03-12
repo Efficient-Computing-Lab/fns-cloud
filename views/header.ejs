@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html lang="en">
-<!doctype html>
 <head>
     <title>Diabetes type 2 risk assessment menu</title>
     <meta charset="utf-8">
@@ -9,21 +9,60 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="css/new.css">
+    <!-- <link rel="stylesheet" href="css/new.css"> -->
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/app-top.css">
+    <link rel="stylesheet" href="css/app-left.css">
+    <link rel="stylesheet" href="css/app-right.css">
+
     <link rel="stylesheet" href="css/chatBot.css">
 
+    <script>
+        function mobile_menu_open() {
+            document.getElementById( "mobile-menu-open" ).classList.add( "mobile-hidden" ); 
+            document.getElementById( "mobile-menu-close" ).classList.remove( "mobile-hidden" ); 
+            document.getElementById( "app-left" ).classList.remove( "mobile-hidden" );
+        }
+        function mobile_menu_close() {
+            document.getElementById( "mobile-menu-open" ).classList.remove( "mobile-hidden" ); 
+            document.getElementById( "mobile-menu-close" ).classList.add( "mobile-hidden" ); 
+            document.getElementById( "app-left" ).classList.add( "mobile-hidden" );
+        }
+    </script>
 </head>
 <body>
-        <nav id="main-menu" role="navigation">
-            <img src="https://www.pikpng.com/pngl/b/47-473793_avocados-from-mexico-is-the-gold-level-sponsor.png" class="center">
-            <ul>
-                <li <%if (currentPage == 'home') { %>class="active"<% } %>><a href="/">Home</a></li>
-                <li <%if (currentPage == 'risk') { %>class="active"<% } %>><a href="/risk">Risk assessment</a></li>
-                <li <%if (currentPage == 'personalized') { %>class="active"<% } %>><a href="/personalized-rec">Personalized Tools</a>
-                </li>
-                <li <%if (currentPage == 'account') { %>class="active"<% } %>><a href="/account-info">My Account</a></li>
-                <li><%- status_msg %></li>
-                <li><%- logout %></li>
-            </ul>
-        </nav>
-    <main>
+    <div class="app">
+        <div class="app-top">
+            <div id="mobile-menu-open"> 
+                <a href="javascript:void(0);" onclick="mobile_menu_open()">
+                    <img src="images/icons/bars-light.svg" />
+                </a>
+            </div> 
+            <div id="mobile-menu-close" class="mobile-hidden">
+                <a href="javascript:void(0);" onclick="mobile_menu_close()">
+                    <img src="images/icons/xmark-light.svg" />
+                </a>
+            </div>
+        </div>
+
+        <div id="app-left" class="app-left mobile-hidden">
+            <img  class="app-icon" src="https://www.pikpng.com/pngl/b/47-473793_avocados-from-mexico-is-the-gold-level-sponsor.png">
+            <nav class="app-menu" role="navigation">
+                <ul>
+                    <li <%if (currentPage == 'home') { %>class="active"<% } %>><a href="/">Home</a></li>
+                    <li <%if (currentPage == 'risk') { %>class="active"<% } %>><a href="/risk">Risk assessment</a></li>
+                    <li <%if (currentPage == 'personalized') { %>class="active"<% } %>><a href="/personalized-rec">Personalized Tools</a></li>
+                    <li <%if (currentPage == 'account') { %>class="active"<% } %>><a href="/account-info">My Account</a></li>
+                    <li><%- status_msg %></li>
+                    <li><%- logout %></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="app-right">
+            <main>
+
+<!-- some content  -->
+<!-- footer.ejs -->
+ 
