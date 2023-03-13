@@ -4,8 +4,8 @@
     align-items: center;
     background: #e0ffe3;
     padding-right: 1rem;
-    padding-bottom: 20px;
-    /* border: 1px dotted black; */
+    padding-bottom: 80px;
+
 }
 
 .app-icon {
@@ -20,13 +20,10 @@
 
 .app-menu li {
     margin-top: .75rem;
-    /* border: 1px dotted black; */
 }
 
 .app-menu a {
     color: green;
-    text-decoration: none;
-    background-color: transparent;
 }
 
 .app-menu a:hover {
@@ -41,6 +38,7 @@
     .app-left { 
         width: 240px;
         justify-content: flex-start;
+        padding-right: 0rem;
         border-right: solid 1px green;
         border-bottom: solid 1px transparent;
     }
@@ -49,10 +47,11 @@
     }        
 }
 
-@media (min-width: 526px) and (max-width: 768px) { /* Tablets */
+@media (min-width: 426px) and (max-width: 768px) { /* Tablets */
     .app-left { 
         width: 200px;
         justify-content: flex-start;
+        padding-right: 0rem;
         border-right: solid 1px green;
     }
     .app-icon {
@@ -60,13 +59,14 @@
     }
 }
 
-@media (max-width: 525px) { /* Mobiles */
-    .app-left.mobile-hidden {
-        display: none; 
-    }
+@media (max-width: 425px) { /* Mobiles */
     .app-left { 
         width: 100%;
+        flex-grow: 10;
         justify-content: center;
-        border-bottom: solid 1px green;
+    }
+    .app-menu li {
+        font-size: 1.2em;    
+        margin-top: 1.25rem;
     }
 }

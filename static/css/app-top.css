@@ -1,26 +1,20 @@
 app-top {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 app-top * {
     background: transparent;
 }
 
-@media (min-width: 769px) { /* Laptops */
+@media (min-width: 426px) { /* Laptops, Tablets */
     .app-top {
         display: none;
     }
 }
 
-@media (min-width: 526px) and (max-width: 768px) { /* Tablets */
-    .app-top {
-        display: none;
-    }
-}
-
-@media (max-width: 525px) { /* Mobiles */
+@media (max-width: 425px) { /* Mobiles */
     .app-top {
         padding: 30px;
         padding-bottom: 0;
@@ -28,9 +22,5 @@ app-top * {
     .app-top img { 
         width: 25px; 
         height: 25px;
-    }
-
-    .app-top > .mobile-hidden {
-        display: none;
     }
 }

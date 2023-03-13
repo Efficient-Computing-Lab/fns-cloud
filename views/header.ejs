@@ -23,11 +23,13 @@
             document.getElementById( "mobile-menu-open" ).classList.add( "mobile-hidden" ); 
             document.getElementById( "mobile-menu-close" ).classList.remove( "mobile-hidden" ); 
             document.getElementById( "app-left" ).classList.remove( "mobile-hidden" );
+            document.getElementById( "app-right" ).classList.add( "mobile-hidden" ); 
         }
         function mobile_menu_close() {
             document.getElementById( "mobile-menu-open" ).classList.remove( "mobile-hidden" ); 
             document.getElementById( "mobile-menu-close" ).classList.add( "mobile-hidden" ); 
             document.getElementById( "app-left" ).classList.add( "mobile-hidden" );
+            document.getElementById( "app-right" ).classList.remove( "mobile-hidden" ); 
         }
     </script>
 </head>
@@ -60,7 +62,7 @@
             </nav>
         </div>
 
-        <div class="app-right">
+        <div id="app-right" class="app-right">
             <main>
 
 <!-- some content  -->
