@@ -367,6 +367,9 @@
 }
 
 @media (max-width: 800px) {
+  .chatBot {
+    width: 250px;
+  }   
   .chatBot.active {
     width: calc( 100vw - 4vh) !important;
   }
