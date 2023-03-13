@@ -1,0 +1,40 @@
+table {
+    border-collapse: collapse;
+    text-align: left;
+    padding: 20px;
+}
+tr, th, td {
+    max-width: 100%;
+}
+
+@media (min-width: 769px) { /* Laptops */
+    table {
+        table-layout: auto;
+        max-width: 66ch;
+    }
+    th, td {
+        padding: 10px;
+        border: solid 1px green;
+    }
+}
+
+@media (max-width: 768px) { /* Tablets, Mobiles */
+    table {
+        table-layout: fixed;
+        width: 100%;
+    }
+    tr {
+        border: 1px solid green;
+    }
+    th, td {
+        padding: 10px;
+        display: block;
+        border: none;
+    }
+    td { 
+        padding-top: 0;
+    }
+    td > * {
+        max-width: 100%;
+    }
+}
