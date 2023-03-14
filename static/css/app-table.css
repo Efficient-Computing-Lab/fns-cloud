@@ -10,6 +10,9 @@ th, td {
     padding: 10px;
     border: solid 1px green;
 }
+td {
+    overflow-x: hidden;
+}
 
 @media (min-width: 769px) { /* Laptops */
     table {

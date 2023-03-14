@@ -744,7 +744,7 @@ app.get('/personalized-rec', async function(req, res) {
   console.log("res local err msg ", req.session.personalized_error);
   res.locals.error_msg = req.session.personalized_error;
   req.session.personalized_error = null;
-  console.log("res local err m2sg ", res.locals.error_msg);
+  console.log("res local err msg ", res.locals.error_msg);
   res.locals.height = null;
   res.locals.height_date = null;
   res.locals.weight = null;
@@ -755,7 +755,7 @@ app.get('/personalized-rec', async function(req, res) {
 
   if(initial_values){
     if (initial_values.height && initial_values.weight) {
-      res.locals.height = initial_values.height.value;
+      res.locals.height = initial_values.height.value * 100; //convert m to cm
       res.locals.height_date = initial_values.height.timestamp.toLocaleDateString();
       res.locals.weight = initial_values.weight.value;
       res.locals.weight_date = initial_values.weight.timestamp.toLocaleDateString();
@@ -1810,5 +1810,3 @@ function recentType(a, type) { //a:array type:string
   }
   return result;
 }
-
-

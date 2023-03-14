@@ -15,6 +15,7 @@ input {
     margin-right: 0;
     margin-left: auto;
     display: inline-block;
+    max-width: 100%;
     padding: 6px 10px;
     font-family: "Poppins", Arial, sans-serif;
 }
