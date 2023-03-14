@@ -37,8 +37,18 @@ select {
     padding: 5px 10px;
 }
 
-#buttons {
+.buttons {
+    text-align: justify;
     text-align-last: justify;
+}
+
+.buttons.account-info {
+    text-align: center;
+    text-align-last: center;
+}
+.buttons.account-info > a {
+    display: inline-block;
+    margin: 2px;
 }
 
 #previous-anchor {
@@ -197,4 +207,7 @@ p.msg.error {
     label[for="physTrue"], label[for="physFalse"] {
         display: inline-block;
     }
+    .buttons.account-info {
+        padding-bottom: 20px;
+    }    
 }

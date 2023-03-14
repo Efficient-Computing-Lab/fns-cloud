@@ -637,17 +637,17 @@ app.post('/risk-result', async function(req, res) {
   }
   res.locals.history = "";
   if (prev_values) {
-    var output = "<table class=\"table table-bordered\"><thead><tr><th>date</th><th>type</th><th>value</th></tr></thead><tbody>";
+    var output = "<table class=\"classic table table-bordered\"><thead><tr><th>date</th><th>type</th><th>value</th></tr></thead><tbody>";
 
     var previous_ir_risk = recentType(prev_values, "ir_risk");
     var previous_htn_risk = recentType(prev_values, "htn_risk");
     if (previous_ir_risk) {
       var val = previous_ir_risk;
-      output += "<tr><td>" + val.timestamp.toLocaleString() + "</td><td>" + val.type + "</td><td>" + val.value + "</td></tr>";
+      output += "<tr><td>" + val.timestamp.toLocaleDateString() + "</td><td>" + val.type + "</td><td>" + val.value + "</td></tr>";
     }
     if (previous_htn_risk) {
       var val = previous_htn_risk;
-      output += "<tr><td>" + val.timestamp.toLocaleString() + "</td><td>" + val.type + "</td><td>" + val.value + "</td></tr>";
+      output += "<tr><td>" + val.timestamp.toLocaleDateString() + "</td><td>" + val.type + "</td><td>" + val.value + "</td></tr>";
     }
     /*
            prev_values.forEach(val => {
@@ -1453,21 +1453,15 @@ app.get('/account-info', restrict, async function(req, res) {
   res.locals.info = "";
   //Create table for account info
   if (userInfo) {
-    var output = "<table class=\"table table-bordered\"><thead><tr><th>Email</th><th>Sex</th><th>Ethnicity</th><th>Birthday Date</th></tr></thead><tbody>";
-
-    output += "<tr><td>" + userInfo['credentials'].email + "</td><td>" + userInfo.sex + "</td><td>" + userInfo.ethnicity + "</td><td>" + userInfo.birth + "</td></tr>";
-
-
-    output += "</tbody></table>";
-    res.locals.info = output;
+    res.locals.info = userInfo;
   }
 
   res.locals.history = "";
   if (prev_values) {
-    var output = "<table class=\"table table-bordered\"><thead><tr><th>date</th><th>type</th><th>value</th></tr></thead><tbody>";
+    var output = "<table class=\"classic table table-bordered\"><thead><tr><th>date</th><th>type</th><th>value</th></tr></thead><tbody>";
 
     prev_values.forEach(val => {
-      output += "<tr><td>" + val.timestamp + "</td><td>" + val.type + "</td><td>" + val.value + "</td></tr>";
+      output += "<tr><td>" + val.timestamp.toLocaleDateString() + "</td><td>" + val.type + "</td><td>" + (val.type === "height" ? val.value.toFixed(2) : val.value) + "</td></tr>";
       return;
     });
 

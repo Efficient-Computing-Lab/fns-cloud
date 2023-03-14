@@ -11,14 +11,21 @@
                     <div class="col-md-12">
                         <h2 class="h4">Info: <%- username %></h2>
                         <hr>
-                        <%-info %>
-                        
+
+                        <table class="table table-bordered">
+                            <tr><th>Email</th><td><%= info['credentials'].email %></td></tr>
+                            <tr><th>Sex</th><td><%= info.sex %></td></tr>
+                            <tr><th>Ethnicity</th><td><%= info.ethnicity %></td></tr>
+                            <tr><th>Birthday Date</th><td><%= info.birth.toLocaleDateString() %></td></tr>
+                        </table><br>
                         <br>
-                        
-                        <a href="/account-info/delete-data"><input type="submit" value="Delete All Data"></input></a>
-                        <a href="/account-info/delete-user"><input type="submit" value="Delete Account"></input></a>
-                        <a href="/batch-mode"><input type="submit" value="Enter batch mode"></input></a>
-                        
+
+                        <div class="buttons account-info">
+                            <a href="/account-info/delete-data"><input type="submit" value="Delete All Data"></input></a>
+                            <a href="/account-info/delete-user"><input type="submit" value="Delete Account"></input></a>
+                            <a href="/batch-mode"><input type="submit" value="Enter batch mode"></input></a>
+                        </div>
+
                         <h2>Past measurements</h2>
                         <%-history%>
                     </div>

@@ -6,15 +6,15 @@ table {
 tr, th, td {
     max-width: 100%;
 }
+th, td {
+    padding: 10px;
+    border: solid 1px green;
+}
 
 @media (min-width: 769px) { /* Laptops */
     table {
         table-layout: auto;
         max-width: 66ch;
-    }
-    th, td {
-        padding: 10px;
-        border: solid 1px green;
     }
 }
 
@@ -23,18 +23,18 @@ tr, th, td {
         table-layout: fixed;
         width: 100%;
     }
-    tr {
+    table:not(.classic) tr {
         border: 1px solid green;
     }
-    th, td {
-        padding: 10px;
+    table:not(.classic) th, 
+    table:not(.classic) td {
         display: block;
         border: none;
     }
-    td { 
+    table:not(.classic) td { 
         padding-top: 0;
     }
-    td > * {
+    table:not(.classic) td > * {
         max-width: 100%;
     }
 }
