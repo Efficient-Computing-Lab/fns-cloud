@@ -304,6 +304,9 @@ app.post('/risk', function(req, res) {
 app.get('/risk-result', function(req, res) {
   res.render('risk-result');
 });
+app.get('/privacy-note',function(req,res){
+  res.render('privacy-note');
+});
 
 app.get('/template.csv',async function(req, res) {
   _ = await fs.readFile(__dirname+'/template.csv', (err,data) => {
