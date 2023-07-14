@@ -26,4 +26,4 @@ Stop docker-compose: $sudo docker-compose down
 **Sources**
 <a href="https://github.com/HarshvardhanThosar/ChatBot-UI">Chatbot Base UI<a>
 
-
+This work is funded by the "Food Nutrition Security Cloud (FNS-Cloud). The project has received funding from the European Union’s Horizon 2020 Research and Innovation programme (H2020-EU.3.2.2.3. – sustainable and competitive agri-food industry) under Grant Agreement No. 863059.
