@@ -1040,6 +1040,7 @@ app.post('/meal-plans', async function(req, res) {
   var secondHouseMins = user.values['sec-house-mins'];
   var weightRate = user.values['weight-rate'];
 
+  try{
   //Estimate RMR
   var rmr = calcRMR(weight, height, getAge(user.values.birth), user.values.sex);
   console.log("RMR= ", rmr);
@@ -1090,7 +1091,6 @@ app.post('/meal-plans', async function(req, res) {
 //      return err;
     }
   });
-
   // if(energy == null){
   //    req.session.error_msg = "Something  went wrong, please try filling in your details again."
   //    res.redirect("/personalized-rec");
@@ -1109,6 +1109,11 @@ app.post('/meal-plans', async function(req, res) {
   var mealPlanCal = getMealPlanCalories(userCal);
 
   console.log("Meal plan calories= ", mealPlanCal);
+} catch(e){
+  console.error(e);
+  console.error("redirecting!");
+  res.redirect("/meals-error");
+}
 
   if (user.values.allergy == null) {
     res.locals.breakfasts = await Meals.find({
