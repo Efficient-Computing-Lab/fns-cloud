@@ -1113,6 +1113,7 @@ app.post('/meal-plans', async function(req, res) {
   console.error(e);
   console.error("redirecting!");
   res.redirect("/meals-error");
+  return;
 }
 
   if (user.values.allergy == null) {
