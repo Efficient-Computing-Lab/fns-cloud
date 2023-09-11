@@ -644,12 +644,12 @@ app.post('/risk-result', async function(req, res) {
 
     var previous_ir_risk = recentType(prev_values, "ir_risk");
     var previous_htn_risk = recentType(prev_values, "htn_risk");
-    if (previous_ir_risk) {
-      var val = previous_ir_risk;
-      output += "<tr><td>" + val.timestamp.toLocaleDateString() + "</td><td>" + val.type + "</td><td>" + val.value + "</td></tr>";
-    }
     if (previous_htn_risk) {
       var val = previous_htn_risk;
+      output += "<tr><td>" + val.timestamp.toLocaleDateString() + "</td><td>" + val.type + "</td><td>" + val.value + "</td></tr>";
+    }
+    if (previous_ir_risk) {
+      var val = previous_ir_risk;
       output += "<tr><td>" + val.timestamp.toLocaleDateString() + "</td><td>" + val.type + "</td><td>" + val.value + "</td></tr>";
     }
     /*
@@ -664,6 +664,8 @@ app.post('/risk-result', async function(req, res) {
 
     output += "</tbody></table>";
     res.locals.history = output;
+  } else {
+    res.locals.history = "You have to log in first.";
   }
 
   const IR_RISK = "There is an increased risk of having insulin resistance. Insulin resistance is a prognostic indicator for the development of Diabetes Mellitus. To avoid the occurrence of Diabetes mellitus, it is important to increase your physical activity, lose weight and adopt healthy eating habits (Mediterranean diet, eating breakfast, avoiding sugary drinks, etc.). It is advisable to visit your doctor for further testing.";
@@ -942,8 +944,11 @@ app.post('/weight-loss-goal', function(req, res) {
     lower_body_weight_cut_off = (height_meters * height_meters) * 18.5;
     higher_body_weight_cut_off = (height_meters * height_meters) * 22.9;
   }
-  res.locals.lower = lower_body_weight_cut_off.toFixed(0);
-  res.locals.higher = higher_body_weight_cut_off.toFixed(0);
+if (higher_body_weight_cut_off > req.session.personalisedState.values.weight){
+  higher_body_weight_cut_off = req.session.personalisedState.values.weight;
+}
+res.locals.lower = lower_body_weight_cut_off.toFixed(0);
+res.locals.higher = higher_body_weight_cut_off.toFixed(0);
 
 
   if (BMI < 35) {
@@ -1470,7 +1475,16 @@ app.get('/account-info', restrict, async function(req, res) {
     var output = "<table class=\"classic table table-bordered\"><thead><tr><th>date</th><th>type</th><th>value</th></tr></thead><tbody>";
 
     prev_values.forEach(val => {
-      output += "<tr><td>" + val.timestamp.toLocaleDateString() + "</td><td>" + val.type + "</td><td>" + (val.type === "height" ? val.value.toFixed(2) : val.value) + "</td></tr>";
+      let value = '';
+      if (val.type == 'height'){
+        value = `${val.value.toFixed(2)} m.`;
+      }
+      else if (val.type == 'weight'){
+        value = `${val.value} kg.`;
+      } else {
+        value = val.value;
+      }
+      output += "<tr><td>" + val.timestamp.toLocaleDateString() + "</td><td>" + val.type + "</td><td>" + value + "</td></tr>";
       return;
     });
 

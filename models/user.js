@@ -38,7 +38,7 @@ const meal = new Schema(
 		option: Number,
 		name: String,
 		ingredients: String,
-        preparation: String,
+    preparation: String,
     category: String,
     cho: Number,
     protein: Number,
