@@ -21,9 +21,9 @@ var flag = new Boolean();
 
 //Risk indicators
 const IR_RISK = "is above normal &#10060;";
-const IR_VRISK = "indicates very high risk &#9940;";
+const IR_VRISK = "indicates a very high risk &#9940;";
 const IR_NORM = "is considered normal &#9989;";
-const HTN_RISK = "indicates risk &#10060;";
+const HTN_RISK = "indicates a high risk &#10060;";
 const HTN_NORM = "is considered normal &#9989;";
 
 //Step Counters
@@ -88,7 +88,6 @@ function calculateRisks(data) {
   var physical = parseInt(data.physical);
   var legumes = parseInt(data.legumes);
 
-  height = height * 0.01; //convert cm to m
   //evaluate
   var irPoints = 0;
   var htnPoints = 0;
@@ -464,7 +463,7 @@ async function createContainer( typeOfContainer ) {
                           lastReplyContainer.appendChild(newReply);
                         } else if( riskStep == 3 && !isNaN(parseFloat(inputMessage)) ){
                           riskStep++;
-                          height = parseFloat(inputMessage) / 100;
+                          height = parseInt(inputMessage);
                           user.height = height; //set user's height
                           newReply.innerHTML = "What is your weight in kilograms?"; 
                           lastReplyContainer.appendChild(newReply);
